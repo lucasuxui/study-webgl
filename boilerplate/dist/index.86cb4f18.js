@@ -611,18 +611,18 @@ class Sketch {
     addObjects() {
         this.geometry = new _three.BoxGeometry(0.3, 0.3, 0.3);
         this.material = new _three.MeshNormalMaterial();
-        // this.material = new THREE.ShaderMaterial({
-        // 	fragmentShader: `
-        // 		void main(){
-        // 			gl_FragColor = vec4(1.,1.,0.,1.);
-        // 		}
-        // 	`,
-        // 	vertexShader: `
-        // 		void main(){
-        // 			gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        // 		}
-        // 	`,
-        // })
+        this.material = new _three.ShaderMaterial({
+            fragmentShader: `
+				void main(){
+					gl_FragColor = vec4(1.,1.,0.,1.);
+				}
+			`,
+            vertexShader: `
+				void main(){
+					gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+				}
+			`
+        });
         this.mesh = new _three.Mesh(this.geometry, this.material);
         this.scene.add(this.mesh);
     }
