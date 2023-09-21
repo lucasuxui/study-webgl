@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls.js'
 
+//Boilerplate
 
 export default class Sketch{
 	constructor(options){
